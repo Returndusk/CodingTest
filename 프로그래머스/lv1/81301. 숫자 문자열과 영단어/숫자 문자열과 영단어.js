@@ -1,21 +1,11 @@
 function solution(s) {
-  var answer = s;
-  const num = [
-    ["zero", "0"],
-    ["one", "1"],
-    ["two", "2"],
-    ["three", "3"],
-    ["four", "4"],
-    ["five", "5"],
-    ["six", "6"],
-    ["seven", "7"],
-    ["eight", "8"],
-    ["nine", "9"],
-  ];
-  for (const a of num) {
-    answer = answer.replaceAll(a[0], a[1]);
-  }
-  return parseInt(answer);
-}
+    const alphabet = ['zero','one','two','three','four','five','six','seven','eight','nine']
+    let answer = s;
 
-console.log(solution("2three45sixseven"));
+    for (let i = 0; i < alphabet.length; i++) {
+        let array = answer.split(alphabet[i]);
+        answer = array.join(i);
+    }
+
+    return Number(answer);
+}
