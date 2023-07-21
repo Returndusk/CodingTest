@@ -19,13 +19,5 @@ function solution(N, stages) {
     player -= count;
   }
 
-  failPer.sort((a, b) => {
-    if (a[1] === b[1]) {
-      return a[0] - b[0];
-    } else {
-      return b[1] - a[1];
-    }
-  });
-
-  return failPer.map((v) => v[0]);
+  return failPer.sort((a, b) => b[1] - a[1]).map((v) => v[0]);
 }
