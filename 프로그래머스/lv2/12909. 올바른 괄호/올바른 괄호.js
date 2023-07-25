@@ -1,16 +1,18 @@
 function solution(s) {
-  let stack = [];
+  let count = 0;
+
+  if (s.length % 2 !== 0) false;
 
   for (let i = 0; i < s.length; i++) {
     if (s[i] === '(') {
-      stack.push(s[i]);
+      count++;
     } else {
-      if (stack.length === 0) {
+      if (count === 0) {
         return false;
       }
-      stack.pop();
+      count--;
     }
   }
 
-  return stack.length === 0;
+  return count === 0;
 }
