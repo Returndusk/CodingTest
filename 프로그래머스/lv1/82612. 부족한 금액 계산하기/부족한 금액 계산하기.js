@@ -1,13 +1,12 @@
 function solution(price, money, count) {
-    let sum = 0;
+  let sum = 0;
 
-    for (let i = 1; i <= count; i++) {
-        sum += (price * i)
-    }
+  for (let i = 1; i <= count; i++) {
+    sum += price * i;
+  }
 
-    if (sum > money) {
-        return sum - money;
-    } else {
-        
-    } return 0;
+  if (sum > money) {
+    return sum - money;
+  }
+  return 0;
 }
