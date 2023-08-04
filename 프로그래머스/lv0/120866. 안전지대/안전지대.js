@@ -25,13 +25,13 @@ function solution(board) {
         }
     }
 
-    for (let i = 0; i < board.length; i++) {
-        for (let j = 0; j < board.length; j++) {
-            if (board[i][j] === 2) {
-            board[i][j] = 1;
-            }
-        }
-    }
+    // for (let i = 0; i < board.length; i++) {
+    //     for (let j = 0; j < board.length; j++) {
+    //         if (board[i][j] === 2) {
+    //         board[i][j] = 1;
+    //         }
+    //     }
+    // }
     
     for (let i = 0; i < board.length; i++) {
         for (let j = 0; j < board.length; j++) {
@@ -40,22 +40,5 @@ function solution(board) {
             }
         }
     }
-    console.log(board)
     return safe
 }
-
-console.log(solution([
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 1, 0, 0],
-    [0, 0, 0, 0, 0]
-    ])
-);
-
-console.log(solution([
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0], 
-    [0, 0, 0, 0, 0], 
-    [0, 0, 1, 1, 0], 
-    [0, 0, 0, 0, 0]]))
