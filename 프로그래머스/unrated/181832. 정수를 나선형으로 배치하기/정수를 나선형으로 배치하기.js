@@ -7,7 +7,7 @@ function solution(n) {
   let left = 0;
   let right = n - 1;
 
-  while (up <= down && left <= right) {
+  while (num <= n * n) {
     for (let i = left; i <= right; i++) {
       arr[up][i] = num++;
     }
