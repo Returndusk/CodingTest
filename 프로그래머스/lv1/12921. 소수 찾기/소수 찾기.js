@@ -1,11 +1,11 @@
 function solution(n) {
   let answer = 0;
-  let arr = Array(n).fill;
-  
+  let arr = [];
+
   for (let i = 2; i <= n; i++) {
-    if (arr[i] === 0) {
-      continue;
-    }
+    // if (arr[i] === 0) {
+    //   continue;
+    // }
 
     for (let j = i + i; j <= n; j += i) {
       arr[j] = 0;
