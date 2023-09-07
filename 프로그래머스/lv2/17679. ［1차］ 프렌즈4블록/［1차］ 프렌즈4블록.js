@@ -26,15 +26,16 @@ function solution(m, n, board) {
       board[v[0]][v[1] - 1] = 0;
       board[v[0] - 1][v[1] - 1] = 0;
     });
-
     // 땅기기
     for (let j = 0; j < n; j++) {
-      let pointer = m - 1;
+      let emptySpace = m - 1;
       for (let i = m - 1; i >= 0; i--) {
         if (board[i][j] !== 0) {
-          board[pointer][j] = board[i][j];
-          if (pointer !== i) board[i][j] = 0;
-          pointer--;
+          if (i !== emptySpace) {
+            board[emptySpace][j] = board[i][j];
+            board[i][j] = 0;
+          }
+          emptySpace--;
         }
       }
     }
