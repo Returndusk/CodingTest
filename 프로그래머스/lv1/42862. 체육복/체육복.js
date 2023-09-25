@@ -1,5 +1,5 @@
 function solution(n, lost, reserve) {
-  const realLost = [...lost.sort()];
+  const realLost = [...lost].sort();
   const realReserve = [...reserve].sort();
 
   lost = realLost.filter((v) => !realReserve.includes(v));
@@ -8,15 +8,15 @@ function solution(n, lost, reserve) {
   let answer = n - lost.length;
 
   for (let i = 0; i < lost.length; i++) {
-    const prevIndex = reserve.indexOf(lost[i] - 1);
-    const nextIndex = reserve.indexOf(lost[i] + 1);
+    const 앞 = reserve.indexOf(lost[i] - 1);
+    const 뒤 = reserve.indexOf(lost[i] + 1);
 
-    if (prevIndex !== -1) {
+    if (앞 !== -1) {
       answer++;
-      reserve.splice(prevIndex, 1);
-    } else if (nextIndex !== -1) {
+      reserve.splice(앞, 1);
+    } else if (뒤 !== -1) {
       answer++;
-      reserve.splice(nextIndex, 1);
+      reserve.splice(뒤, 1);
     }
   }
 
